@@ -20,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function (Request $request) {
-    return (new Controller)->index($request);
+    // return (new Controller)->index($request);
+    return view('login');
 })->name('login');
