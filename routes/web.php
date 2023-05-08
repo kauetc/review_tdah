@@ -33,6 +33,6 @@ Route::get('/register', function(Request $request){
     return view('register');
 })->name('register');
 
-Route::get('/register/create', function(Request $request){
+Route::post('/register/create', function(Request $request){
     return (new AuthController)->register($request);
 })->name('create_user');

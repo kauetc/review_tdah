@@ -12,7 +12,8 @@
         
         <h1>CADASTRO DE USUÁRIO</h1>
 
-        <form method="POST">
+        <form method="POST" action="{{route('create_user');}}">
+            {{ csrf_field()}}
             <div class="form-group">
                 <label for="InputNome">Nome</label>
                 <input type="text" class="form-control" id="InputNome" name="nome" placeholder="José da Silva"/>       
@@ -30,37 +31,37 @@
 
             <div class="form-group">
                 <label for="cep">CEP</label>
-                <input type="text" class="form-control" id="cep" placeholder="Ex:00.000-000"/>
+                <input type="text" class="form-control" id="cep" name="cep" placeholder="Ex:00.000-000"/>
             </div>
 
             <div class="form-group">
                 <label for="logradouro">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro" placeholder=""/>
+                <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder=""/>
             </div>
 
             <div class="form-group">
                 <label for="complemento">Complemento</label>
-                <input type="text" class="form-control" id="complemento" placeholder=""/>
+                <input type="text" class="form-control" id="complemento" name="complemento" placeholder=""/>
             </div>
 
             <div class="form-group">
                 <label for="numero">Número</label>
-                <input type="text" class="form-control" id="numero" placeholder=""/>
+                <input type="text" class="form-control" id="numero" name="numero" placeholder=""/>
             </div>
 
             <div class="form-group">
                 <label for="bairro">Bairro</label>
-                <input type="text" class="form-control" id="bairro" placeholder=""/>
+                <input type="text" class="form-control" id="bairro" name="bairro" placeholder=""/>
             </div>
 
             <div class="form-group">
                 <label for="localidade">Cidade</label>
-                <input type="text" class="form-control" id="localidade" placeholder=""/>
+                <input type="text" class="form-control" id="localidade" name="cidade" placeholder=""/>
             </div>
 
             <div class="form-group">
                 <label for="uf">Estado</label>
-                    <select id="uf">
+                    <select id="uf" name="uf">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -93,13 +94,12 @@
 
             <div class="form-group">
                 <label for="pais">País</label>
-                <input type="text" class="form-control" id="pais" placeholder=""/>
+                <input type="text" class="form-control" id="pais" name="pais" placeholder=""/>
             </div>
             
             <div class="form-group">
-                <input type="submit" value="Cadastrar" />
+                <input type="submit" value="Cadastrar" id="botao_cadastrar" name="botao_cadastrar"/>
             </div>
-            
         </form> 
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

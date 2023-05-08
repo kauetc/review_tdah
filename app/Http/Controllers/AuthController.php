@@ -13,6 +13,7 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
+        dd($request->all());
         $request->username = 'kaue.trevisan';
         if (User::where('username', '=', $request->username)->exists()){
             return response()->json(['success' => false, 'message' => 'Usuário já cadastrado']);
