@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/app.css">
 
         <title>Cadastro - Review TDAH</title>
 
@@ -17,6 +18,15 @@
             <div class="form-group">
                 <label for="InputNome">Nome</label>
                 <input type="text" class="form-control" id="InputNome" name="nome" placeholder="José da Silva"/>       
+            </div>
+
+            <div class="form-group">
+                <label for="InputUsername">Usuário</label>
+                <input type="text" class="form-control" id="InputUsername" name="username" placeholder="José da Silva"/>       
+            </div>
+            <div class="form-group">
+                <label for="InputPassword">Usuário</label>
+                <input type="password" class="form-control" id="InputPassword" name="password" placeholder="José da Silva"/>       
             </div>
 
             <div class="form-group">
