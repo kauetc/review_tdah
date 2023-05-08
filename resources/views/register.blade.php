@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
         <title>Cadastro - Review TDAH</title>
 
@@ -21,8 +21,11 @@
             </div>
 
             <div class="form-group">
-                <label for="InputUsername">Usuário</label>
-                <input type="text" class="form-control" id="InputUsername" name="username" placeholder="José da Silva"/>       
+                <label for="InputUsername">E-mail</label>
+                <input type="text" class="form-control" id="InputUsername" name="username" placeholder="José da Silva"/>
+                @if ($errors->has('username'))
+                    <p style="color: red">{{ $errors->first('username') }}</p>
+                @endif
             </div>
             <div class="form-group">
                 <label for="InputPassword">Password</label>

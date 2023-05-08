@@ -39,4 +39,7 @@ class User extends Model
         'updated_at',
         'user_alt'
     ];
+    protected $hidden = [
+        'password'
+      ];
 }
