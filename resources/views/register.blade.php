@@ -21,8 +21,11 @@
             </div>
 
             <div class="form-group">
-                <label for="InputUsername">Usuário</label>
+                <label for="InputUsername">E-mail</label>
                 <input type="text" class="form-control" id="InputUsername" name="username" placeholder="José da Silva"/>       
+                @if ($errors->has('username'))
+                    <p class="text-red-500">{{ $errors->first('username') }}</p>
+                @endif
             </div>
             <div class="form-group">
                 <label for="InputPassword">Password</label>
