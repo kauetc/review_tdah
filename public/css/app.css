@@ -19,6 +19,7 @@ label {
 
 .container {
     background-color: aquamarine;
+    width: 800px;
     position: absolute;
     top: 80%;
     left: 50%;
@@ -30,16 +31,6 @@ input {
     height: 20px;
 }
 
-.column-1 {
-    float: left;
-    width: 50%;
-    text-align: end;
-}
-.column-2 {
-    float: right;
-    width: 50%;
-    text-align: start;
-}
 
 
 

@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <div class="column-1">
                         <label for="InputNome">Nome</label>
-                        <input type="text" class="form-control" id="InputNome" name="nome" placeholder="José da Silva"/>       
+                        <input type="text" class="form-control" id="InputNome" name="nome" value="{{old('nome')}}" placeholder="José da Silva"/>       
                         @if ($errors->has('nome'))
                             <p class="">{{ $errors->first('nome') }}</p>
                         @endif
@@ -40,57 +40,68 @@
                 <div class="form-group">
                     <div class="column-2">
                         <label for="InputUsername">Usuário</label>
-                        <input type="text" class="form-control" id="InputUsername" name="username" placeholder="José da Silva"/>       
-            
+                        <input type="text" class="form-control" id="InputUsername" name="username" value="{{old('username')}}" placeholder="José da Silva"/>       
+                        @if ($errors->has('username'))
+                            <p class="">{{ $errors->first('username') }}</p>
+                        @endif
                     </div>
                     </div>
                 <div class="form-group">
                     <label for="InputPassword">Senha</label>
-                    <input type="password" class="form-control" id="InputPassword" name="password" placeholder="José da Silva"/>       
+                    <input type="password" class="form-control" id="InputPassword" name="password" value="{{old('password')}}" placeholder="José da Silva"/>       
+                    @if ($errors->has('password'))
+                        <p class="">{{ $errors->first('password') }}</p>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label for="InputDataNasc">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="InputDataNasc" name="datanascimento" placeholder="01/01/2001"/>
+                    <input type="date" class="form-control" id="InputDataNasc" name="datanascimento" value="{{old('datanascimento')}}" placeholder="01/01/2001"/>
+                    @if ($errors->has('datanascimento'))
+                        <p class="">{{ $errors->first('datanascimento') }}</p>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label for="InputCPF">CPF</label>
-                    <input type="text" class="form-control" id="InputCPF" name="cpf" placeholder="000.000.000-00"/>
+                    <input type="text" class="form-control" id="InputCPF" name="cpf" value="{{old('cpf')}}" placeholder="000.000.000-00"/>
+                    @if ($errors->has('cpf'))
+                        <p class="">{{ $errors->first('cpf') }}</p>
+                    @endif
                 </div>
             
                 <div class="form-group">
                     <label for="cep">CEP</label>
-                    <input type="text" class="form-control" id="cep" name="cep" placeholder="Ex:00.000-000"/>
+                    <input type="text" class="form-control" id="cep" name="cep" value="{{old('cep')}}" placeholder="Ex:00.000-000"/>
                 </div>
 
                 <div class="form-group">
                     <label for="logradouro">Logradouro</label>
-                    <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder=""/>
+                    <input type="text" class="form-control" id="logradouro" name="logradouro" value="{{old('logradouro')}}" placeholder=""/>
                 </div>
                 
                 <div class="form-group">
                     <label for="complemento">Complemento</label>
                     <div class="column-1">
-                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder=""/>
+                        <input type="text" class="form-control" id="complemento" name="complemento" value="{{old('complemento')}}" placeholder=""/>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="numero">Número</label>
                     <div class="column-2">
-                        <input type="text" class="form-control" id="numero" name="numero" placeholder=""/>
+                        <input type="text" class="form-control" id="numero" name="numero" value="{{old('numero')}}" placeholder=""/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="bairro">Bairro</label>
-                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder=""/>
+                    <input type="text" class="form-control" id="bairro" name="bairro"value="{{old('bairro')}}" placeholder=""/>
                 </div>
 
                 <div class="form-group">
                     <label for="localidade">Cidade</label>
-                    <input type="text" class="form-control" id="localidade" name="cidade" placeholder=""/>
+                    <input type="text" class="form-control" id="localidade" name="cidade"value="{{old('cidade')}}" placeholder=""/>
                 </div>
 
                 <div class="form-group">
@@ -101,7 +112,7 @@
 
                 <div class="form-group">
                     <label for="pais">País</label>
-                    <input type="text" class="form-control" id="pais" name="pais" placeholder=""/>
+                    <input type="text" class="form-control" id="pais" name="pais"value="{{old('pais')}}" placeholder=""/>
                 </div>
                 
                 <div class="form-group">

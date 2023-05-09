@@ -30,12 +30,12 @@ class AuthController extends Controller
         $user->data_nasc = $validatedData['datanascimento'];
         $user->cpf = $validatedData['cpf'];
         $user->cep = $request->cep;
-        $user->logradouro = $request->cep;
+        $user->rua = $request->logradouro;
         $user->complemento = $request->complemento;
         $user->numero = $request->numero;
         $user->bairro = $request->bairro;
         $user->cidade = $request->cidade;
-        $user->uf = $request->uf;
+        $user->estado = $request->uf;
         $user->pais = $request->pais;
         $user->save();
 
