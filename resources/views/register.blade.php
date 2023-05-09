@@ -29,6 +29,7 @@
                     <div class="column-2">
                         <label for="InputUsername">Usuário</label>
                         <input type="text" class="form-control" id="InputUsername" name="username" placeholder="José da Silva"/>       
+            
                     </div>
                     </div>
                 <div class="form-group">
