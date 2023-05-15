@@ -34,7 +34,7 @@
                 
                 <div class="row">
                     <div class="column1">
-                        <input type="checkbox" id="remember-me"/>
+                        <input type="checkbox" name="remember-me" id="remember-me"/>
                         <label for="remember-me">Lembrar de mim</label>                       
                     </div>
 
@@ -44,10 +44,11 @@
 
                     <div class="row">
                         <div class="column3">
-                            <input type="submit" value="Fazer login" />
+                            <input type="submit" name="submit" id="submit" value="Fazer login" />
                         </div>
                         <div class="column4">
-                            <input type="button" value="Cadastre-se" />
+                            <p>Ainda não tem conta?</p>
+                            <input type="button" name="register" id="register" value="Cadastre-se" />
                         </div>
                     </div>
                 </div>
