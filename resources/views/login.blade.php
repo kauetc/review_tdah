@@ -21,14 +21,14 @@
                 <div class="login-info">
                     <label>
                         E-mail <br/>
-                        <input type="email" placeholder="Digite aqui seu e-mail"/>
+                        <input type="email" name="email" id="email" placeholder="Digite aqui seu e-mail"/>
                     </label>
                 </div>
 
                 <div class="login-info">
                     <label>
                         Senha <br/>
-                        <input type="password" placeholder="Digite aqui sua senha"/>
+                        <input type="password" name="password" id="password" placeholder="Digite aqui sua senha"/>
                     </label>
                 </div>
                 
