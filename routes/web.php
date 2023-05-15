@@ -20,6 +20,11 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::post('/login', function (Request $request) {
+    // return (new Controller)->index($request);
+    return view('login');
+})->name('login');
+
 Route::get('/login', function (Request $request) {
     // return (new Controller)->index($request);
     return view('login');
