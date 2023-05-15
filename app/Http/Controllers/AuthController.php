@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function login(Request $request){
-        $credentials = $request->only('email', 'password');
+        $credentials['username'] = $request->get('email');
+        $credentials['password'] = $request->get('password');
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
@@ -19,7 +20,7 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'username' => 'The provided credentials do not match our records.',
         ]);
     }
 

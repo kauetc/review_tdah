@@ -20,10 +20,11 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::post('/login', function (Request $request) {
+
+Route::get('/dashboard', function (Request $request) {
     // return (new Controller)->index($request);
-    return view('login');
-})->name('login');
+    return view('dashboard');
+})->name('dashboard');
 
 Route::get('/login', function (Request $request) {
     // return (new Controller)->index($request);
