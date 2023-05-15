@@ -16,7 +16,7 @@
             <div class="title" >
                 Área de Login
             </div>
-            <form method="POST" action="{{route('login');}}">
+            <form method="POST" action="{{route('auth');}}">
                 {{ csrf_field()}}
                 <div class="login-info">
                     <label>
