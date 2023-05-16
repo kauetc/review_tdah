@@ -4,17 +4,70 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Teste login</title>
+        <title>Página inicial</title>
         <link rel="stylesheet" href="login.css"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Jost:wght@300&display=swap" rel="stylesheet">
     </head>
 
-    <body>                   
-       <div class="center-square">
-            <h1>TESTE</h1>          
-       </div>     
-    </body>
+    <body>
+        <h1>Bem vindo!</h1>               
+        <div class="dashboard-columns">
+            <div class="row">
+                <div class="column1">
+                    <div class="category-rectangle">
+                        <div class="image">
+                            <img> <!-- COMPLETAR -->
+                        </div>
+                        <div class="category-name">
+                            <h1>RESTAURANTES</h1>
+                        </div>
+                    </div>                
+                </div>
+                
+                <div class="column2">
+                    <div class="category-rectangle">
+                        <div class="image">
+                            <img> <!-- COMPLETAR -->
+                        </div>
+                        <div class="category-name">
+                            <h1>LANCHONETES</h1>
+                        </div>
+                    </div>                
+                </div>
 
+                <div class="column3">
+                    <div class="category-rectangle">
+                        <div class="image">
+                            <img> <!-- COMPLETAR -->
+                        </div>
+                        <div class="category-name">
+                            <h1>BARES</h1>
+                        </div>
+                    </div>                
+                </div>
+
+                <div class="column4">
+                    <div class="category-rectangle">
+                        <div class="image">
+                            <img> <!-- COMPLETAR -->
+                        </div>
+                        <div class="category-name">
+                            <h1>PADARIAS</h1>
+                        </div>
+                    </div>                
+                </div>   
+            </div>      
+        </div>
+        
+        <div class="sidebar">
+            <table>
+                <tr><td><a href="{{route('categories');}}">Categorias</td></tr>
+                <tr><td><a href="{{route('subcategories');}}">Subcategorias</td></tr>
+                <tr><td><a href="{{route('reviews');}}">Reviews</td></tr>
+                <tr><td>Análise dos dados</td></tr>
+                <tr><td><a href="{{route('settings');}}">Configurações</td></tr>
+                <tr><td><a href="{{route('profile');}}">Perfil</td></tr>
+            </table>              
+        </div>
+
+    </body>
 </html>

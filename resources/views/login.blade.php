@@ -4,14 +4,24 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Teste login</title>
+        <title> Login</title>
         <link rel="stylesheet" href="login.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Jost:wght@300&display=swap" rel="stylesheet">
     </head>
 
-    <body>                   
+    <body>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+                           
        <div class="center-square">
             <div class="title" >
                 Área de Login
