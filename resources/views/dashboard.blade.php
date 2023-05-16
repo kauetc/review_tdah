@@ -9,6 +9,13 @@
     </head>
 
     <body>
+        <header>
+            <div class="top-section">
+                <h1>Olá <!-- Nome do usuário logado -->!</h1>
+                <!-- <a href="[página de configurações]">Configurações</a> -->
+                <!-- <a href="[redirecionamento para saída]">Sair</a> -->
+            </div>
+
         <h1>Bem vindo!</h1>               
         <div class="dashboard-columns">
             <div class="row">
@@ -59,15 +66,25 @@
         </div>
         
         <div class="sidebar">
-            <table>
-                <tr><td><a href="{{route('categories');}}">Categorias</td></tr>
-                <tr><td><a href="{{route('subcategories');}}">Subcategorias</td></tr>
-                <tr><td><a href="{{route('reviews');}}">Reviews</td></tr>
-                <tr><td>Análise dos dados</td></tr>
-                <tr><td><a href="{{route('settings');}}">Configurações</td></tr>
-                <tr><td><a href="{{route('profile');}}">Perfil</td></tr>
-            </table>              
+            <div id="expand-container">
+                <div id="expand-contract" class="expanded">
+                    <table>
+                        <tr><td><a href="{{route('categories');}}">Categorias</td></tr>
+                        <tr><td><a href="{{route('subcategories');}}">Subcategorias</td></tr>
+                        <tr><td><a href="{{route('reviews');}}">Reviews</td></tr>
+                        <tr><td>Análise dos dados</td></tr>
+                        <tr><td><a href="{{route('settings');}}">Configurações</td></tr>
+                        <tr><td><a href="{{route('profile');}}">Perfil</td></tr>
+                    </table>
+                </div>
+            </div>
         </div>
+
+        <footer>
+            <div class="bottom-section">
+
+            </div>
+        </footer>
 
     </body>
 </html>
