@@ -34,22 +34,12 @@ class AuthController extends Controller
             'cpf' => 'required|min:14'
         ]);
 
-        $user = new User;
-        $user->nome = $validatedData['nome'];
-        $user->username = $validatedData['username'];
-        $user->password = Hash::make($validatedData['password']);
-        $user->data_nasc = $validatedData['datanascimento'];
-        $user->cpf = $validatedData['cpf'];
-        $user->cep = $request->cep;
-        $user->rua = $request->logradouro;
-        $user->complemento = $request->complemento;
-        $user->numero = $request->numero;
-        $user->bairro = $request->bairro;
-        $user->cidade = $request->cidade;
-        $user->estado = $request->uf;
-        $user->pais = $request->pais;
-        $user->save();
+        $addUser = User::add($request, $validatedData);
 
-        return redirect()->route('register')->with('success', 'Usuário registrado com sucesso');
+        if($addUser){
+            return redirect()->route('register')->with('success', 'Usuário registrado com sucesso');
+        } else {
+            return redirect()->route('register')->with('error', 'Falha ao adicionar usuário. Contate o Administrador');
+        }
     }
 }

@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\SubCategoriesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +47,23 @@ Route::get('/register', function(Request $request){
 Route::post('/register/create', function(Request $request){
     return (new AuthController)->register($request);
 })->name('create_user');
+
+Route::get('/subcategories', function(Request $request){
+    return (new SubCategoriesController)->browse($request);
+})->name('subcategories');
+
+Route::get('/categories', function(Request $request){
+    return (new CategoriesController)->browse($request);
+})->name('categories');
+
+Route::get('/reviews', function(Request $request){
+    return (new ReviewsController)->browse($request);
+})->name('reviews');
+
+Route::get('/settings', function(Request $request){
+    return (new SettingsController)->browse($request);
+})->name('settings');
+
+Route::get('/profile', function(Request $request){
+    return (new UserController)->profile($request);
+})->name('profile');

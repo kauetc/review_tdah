@@ -21,6 +21,11 @@
                 <p>Para logar clique <a href="{{route('login')}}">aqui</a></p>
             </div>
         @endif
+        @if (session()->has('error'))
+            <div class="alert alert-success">
+                {{ session('error') }}
+            </div>
+        @endif
         
         <h1>CADASTRO DE USUÁRIO</h1>
 
