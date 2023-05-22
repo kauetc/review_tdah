@@ -56,6 +56,10 @@ Route::get('/categories', function(Request $request){
     return (new CategoriesController)->browse($request);
 })->name('categories');
 
+Route::get('/categories/{id}', function(Request $request){
+    return (new CategoriesController)->browse($request);
+})->name('categories_detail');
+
 Route::get('/reviews', function(Request $request){
     return (new ReviewsController)->browse($request);
 })->name('reviews');
