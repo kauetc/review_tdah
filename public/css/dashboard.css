@@ -1,0 +1,84 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.dashboard-columns {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    
+    
+  
+    
+}
+
+.row {
+    width: auto;
+    height: auto;
+    
+
+}
+
+.column {
+
+    background-color: #555;
+    margin: 15px;
+    height: 200px;
+    font-size: 9px;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.5s ease;
+    border-radius: 10px; 
+    
+   
+}
+
+
+a {
+    text-decoration: none;
+   
+}
+
+.column:hover {
+    transform: scale(1.1);
+
+}
+
+.column h1 {
+    padding-top: 6px;
+    font-family: 'Urbanist';
+    
+}
+
+.image img {
+    max-width: 100%;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    opacity: 0.7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+@media (min-width:600px) {
+    .row {
+        display: flex;
+        width: calc(100% - 15%);
+        height: auto;
+        margin: auto;
+    
+    }
+    
+    .column {
+        flex-basis: 25%;
+        margin: 10px;
+        
+     
+    }
+}

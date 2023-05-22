@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Página inicial</title>
         <link rel="stylesheet" href="login.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -16,52 +20,57 @@
                 <!-- <a href="[redirecionamento para saída]">Sair</a> -->
             </div>
 
-        <h1>Bem vindo!</h1>               
+        <h1>Bem vindo!</h1>   
+        </header>
+        
         <div class="dashboard-columns">
             <div class="row">
-                <div class="column1">
-                    <div class="category-rectangle">
+
+                <a href="https://www.google.com.br/" target=”_blank”>
+                    <div class="column" id="restaurante">
                         <div class="image">
-                            <img> <!-- COMPLETAR -->
+                            
+                            <img src="https://a.cdn-hotels.com/gdcs/production156/d1067/98b5cb4d-ea36-43fd-b3ca-21ae04c7c770.jpg" width="100%" height="100%"/>
+                            
                         </div>
-                        <div class="category-name">
-                            <h1>RESTAURANTES</h1>
-                        </div>
-                    </div>                
-                </div>
+                        <h1 id="rest">RESTAURANTES</h1>                  
+                    </div>
+                </a>
                 
-                <div class="column2">
-                    <div class="category-rectangle">
+                <a href="https://www.google.com.br/" target=”_blank”>
+                    <div class="column">
                         <div class="image">
-                            <img> <!-- COMPLETAR -->
+                            <img src="https://nox.com.br/wp-content/uploads/2022/12/como-montar-uma-lanchonete-nox-automacao-blog-scaled-e1670341533976-1024x684.jpg"  width="100%" height="100%"/> 
                         </div>
-                        <div class="category-name">
-                            <h1>LANCHONETES</h1>
-                        </div>
-                    </div>                
-                </div>
+                        <h1>LANCHONETES</h1> 
+                    </div>
+                </a>
 
-                <div class="column3">
-                    <div class="category-rectangle">
-                        <div class="image">
-                            <img> <!-- COMPLETAR -->
-                        </div>
-                        <div class="category-name">
-                            <h1>BARES</h1>
-                        </div>
-                    </div>                
-                </div>
+                <a href="https://www.google.com.br/" target=”_blank”>
+                    <div class="column" >
+                    <div class="image">
+                        
+                        <img src="https://f.i.uol.com.br/fotografia/2018/07/26/15326332335b5a209143c97_1532633233_3x2_md.jpg" width="100%" height="100%"/> 
+                        
+                    </div>
+                    
+                    <h1>BARES</h1>
+                    
+                                   
+                    </div>
+                </a>
 
-                <div class="column4">
-                    <div class="category-rectangle">
+                <a href="https://www.google.com.br/" target=”_blank”>
+                    <div class="column">
                         <div class="image">
-                            <img> <!-- COMPLETAR -->
+                            <img src="https://www.farofamagazine.com.br/wp-content/uploads/2022/05/unnamed-12.jpg" width="100%" height="100%"/>  
                         </div>
-                        <div class="category-name">
-                            <h1>PADARIAS</h1>
-                        </div>
-                    </div>                
-                </div>   
+                        
+                        <h1>PADARIAS</h1>
+                        
+                                        
+                    </div>
+                </a>   
             </div>      
         </div>
         
