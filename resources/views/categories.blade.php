@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Categorias</title>        
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/categories.css') }}"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap" rel="stylesheet">
@@ -36,16 +36,18 @@
         <div id="content">
             <div class="div-header">
                 <div id="div-search" class="div-search">
-                    <input type="text" id="searchbar" placeholder="Procurar categoria..."/>
-                    <button id="button-search"> Pesquisar</button>
+                    <input type="text" id="searchbar" name="searchbar" placeholder="Procurar categoria..."/>
+                    <button id="button-search">Pesquisar</button>
                 </div>
 
                 <div id="div-newcategory" class="div-newcategory">
-                    <a href="{{route('categories_create')}}"><button id="button-newcategory">Adicionar categoria</button></a>
+                    <a href="{{route('categories_create')}}">
+                        <button id="button-newcategory">Adicionar categoria</button>
+                    </a>
                 </div>
             </div>
 
-            <div id="table">
+            <div id="table" class="table">
                 <table>
                     <thead>
                         <tr>
@@ -56,10 +58,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <button id="button-edit-category">Editar</button>
-
-
-
+                        @foreach($categories as $category)
+                            <tr>
+                                <td>{{$category->nome_categoria}}</td>
+                                <td>{{$category->created_at}}</td>
+                                <td>{{$category->updated_at}}</td>
+                                <td><a href=""><button id="button-edit-category">Editar</button></a>
+                                <a href=""><button id="button-exclude-category">Excluir</button></a></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
 
 
 
@@ -70,21 +78,6 @@
                 menu
                 footer
             --}}
-
-
-            
-            
-            @foreach($categories as $category)
-                <a href="{{route('categories_detail', $category->id)}}" target=”_blank”>
-                    <div class="column">
-                        <div class="image">
-                            <img src="https://nox.com.br/wp-content/uploads/2022/12/como-montar-uma-lanchonete-nox-automacao-blog-scaled-e1670341533976-1024x684.jpg"  width="100%" height="100%"/> 
-                        </div>
-                        <h1>{{$category->nome_categoria}}</h1> 
-
-                    </div>
-                </a>
-            @endforeach
                     
         </div>
 

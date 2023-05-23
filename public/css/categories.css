@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.div-search {
+    width: 100%;
+    height: 100px;
+}
+
+#searchbar {
+    position: relative;
+    width: 300px;
+    height: 30px;
+}
+
+#button-search {
+    width: 80px;
+    height: 30px;
+}
+
+td {
+    border: 1px solid #000;
+}
