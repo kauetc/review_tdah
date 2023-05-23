@@ -27,12 +27,13 @@ class CategoriesController extends Controller
 
         $categories = new Categories();
         $categories->nome_categoria = $validatedData['nome_categoria'];
+        $categories->user_alt = session('username');
         $saved = $categories->save();
 
         if(!$saved){
             return redirect()->route('categories')->with('error', 'Falha ao adicionar categoria. Contate o Administrador');
         } else {
-            return redirect()->route('categories')->with('success', 'Usuário registrado com sucesso');
+            return redirect()->route('categories')->with('success', 'Categoria criada com sucesso');
         }
     }
 }

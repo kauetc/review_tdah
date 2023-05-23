@@ -16,6 +16,8 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
+            // write info to the session
+            session(['user_id' => Auth::id(), 'username' => Auth::user()->username]);
             return redirect()->intended('/dashboard');
         }
 

@@ -22,6 +22,7 @@
             --}}
             
             <form method="POST" action="{{route('categories_new')}}" enctype="multipart/formdata">
+                {{ csrf_field()}}
                 @foreach($columnNames as $key => $columnName)
                     @if($columnName != 'id' && $columnName != 'updated_at' && $columnName != 'user_alt' && $columnName != 'created_at')
                         <label for="{{$columnName}}">{{ucwords(str_replace('_', ' ', $columnName))}}</label>
