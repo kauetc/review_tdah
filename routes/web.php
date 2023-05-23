@@ -52,8 +52,17 @@ Route::get('/subcategories', function(Request $request){
     return (new SubCategoriesController)->browse($request);
 })->name('subcategories');
 
+Route::get('/categories/create', function(Request $request){
+    return (new CategoriesController)->create($request);
+})->name('categories_create');
+
+Route::post('/categories/new', function(Request $request){
+    return (new CategoriesController)->save($request);
+})->name('categories_new');
+
 Route::get('/categories', function(Request $request){
     return (new CategoriesController)->browse($request);
+
 })->name('categories');
 
 Route::get('/categories/{id}', function(Request $request){

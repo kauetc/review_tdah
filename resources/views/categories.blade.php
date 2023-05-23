@@ -19,6 +19,19 @@
                 <!-- Hiperlink sair? (canto superior direito)-->
             </header>
         </div>
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            <div>
+                <p>Categoria Adicionada com sucesso</p>
+            </div>
+        @endif
+        @if (session()->has('error'))
+            <div class="alert alert-success">
+                {{ session('error') }}
+            </div>
+        @endif
         
         <div id="content">
             <div class="div-header">
@@ -28,7 +41,7 @@
                 </div>
 
                 <div id="div-newcategory" class="div-newcategory">
-                    <button id="button-newcategory"> Adicionar categoria</button>
+                    <a href="{{route('categories_create')}}"><button id="button-newcategory">Adicionar categoria</button></a>
                 </div>
             </div>
 
