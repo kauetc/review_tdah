@@ -24,6 +24,7 @@
             <form method="POST" action="{{route('categories_new')}}" enctype="multipart/formdata">
                 {{ csrf_field()}}
                 @include('custom.fields_by_columns')
+                <input type="button" id="button_confirm" class="button" value="Salvar">
             </form>
         </div>
     </body>
