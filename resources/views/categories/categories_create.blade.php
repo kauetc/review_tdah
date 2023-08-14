@@ -23,13 +23,7 @@
             
             <form method="POST" action="{{route('categories_new')}}" enctype="multipart/formdata">
                 {{ csrf_field()}}
-                @foreach($columnNames as $key => $columnName)
-                    @if($columnName != 'id' && $columnName != 'updated_at' && $columnName != 'user_alt' && $columnName != 'created_at')
-                        <label for="{{$columnName}}">{{ucwords(str_replace('_', ' ', $columnName))}}</label>
-                        <input type="text" name="{{$columnName}}" id="{{$columnName}}" placeholder="{{$columnName}}">
-                        <button type="submit" name="submit" id="submit_button">SALVAR </button>
-                    @endif
-                @endforeach
+                @include('custom.fields_by_columns')
             </form>
         </div>
     </body>
