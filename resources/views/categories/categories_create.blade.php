@@ -21,11 +21,20 @@
                 footer
             --}}
             
-            <form method="POST" action="{{route('categories_new')}}" enctype="multipart/formdata">
+            <form method="POST" action="{{route('categories_new')}}" enctype="multipart/formdata" id='name_categories'>
                 {{ csrf_field()}}
                 @include('custom.fields_by_columns')
                 <input type="button" id="button_confirm" class="button" value="Salvar">
             </form>
         </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+
+            const route = "{{route('categories_new')}}";
+        </script>
+        <script src="{{ asset('js/categories.js') }}"></script>
     </body>
+    
 </html>
+

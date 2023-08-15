@@ -21,19 +21,20 @@ class CategoriesController extends Controller
     }
 
     public function save(Request $request){
-        $validatedData = $request->validate([
-            'nome_categoria' => 'required|string|max:255',
-        ]);
+        dd($request);
+        // $validatedData = $request->validate([
+        //     'nome_categoria' => 'required|string|max:255',
+        // ]);
 
-        $categories = new Categories();
-        $categories->nome_categoria = $validatedData['nome_categoria'];
-        $categories->user_alt = session('username');
-        $saved = $categories->save();
+        // $categories = new Categories();
+        // $categories->nome_categoria = $validatedData['nome_categoria'];
+        // $categories->user_alt = session('username');
+        // $saved = $categories->save();
 
-        if(!$saved){
-            return redirect()->route('categories')->with('error', 'Falha ao adicionar categoria. Contate o Administrador');
-        } else {
-            return redirect()->route('categories')->with('success', 'Categoria criada com sucesso');
-        }
+        // if(!$saved){
+        //     return redirect()->route('categories')->with('error', 'Falha ao adicionar categoria. Contate o Administrador');
+        // } else {
+        //     return redirect()->route('categories')->with('success', 'Categoria criada com sucesso');
+        // }
     }
 }
