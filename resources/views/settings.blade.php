@@ -10,5 +10,6 @@
 
     <body>
         <h1>Configurações</h1>
+        <p>Thiago e um bobao</p>
     </body>
 </html>
