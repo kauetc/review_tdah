@@ -9,7 +9,7 @@ class CategoriesController extends Controller
 {
     public function browse(Request $request){
         $categories = Categories::select('*')->get();
-        return view('categories', compact('categories'));
+        return view('categories/categories', compact('categories'));
     }
 
     public function create(Request $request){
@@ -24,26 +24,29 @@ class CategoriesController extends Controller
         $validatedData = $request->validate([
             'nome_categoria' => 'required|string|max:255',
         ]);
-        
+        // try catch da operação no banco de dados.
         try{
             $categories = new Categories();
             $categories->nome_categoria = $validatedData["nome_categoria"];
             $categories->user_alt = session('username'); 
             $saved = $categories->save();
-         }
-         catch(\Exception $e){
-            // do task when error
-            return json_encode($e->getMessage());   // insert query
-         }
+        }
+        catch(\Exception $e){
+        // do task when error
+        return json_encode(array(
+            'redirect' => route('categories'),
+            'error' => $e->getMessage()
+        ));
+        }
 
         if(!$saved){
-            // return redirect()->route('categories')->with('error', 'Falha ao adicionar categoria. Contate o Administrador');
+            // retorno ajax json
             return json_encode(array(
                 'redirect' => route('categories'),
                 'error' => 'Falha ao adicionar categoria. Contate um administrador'
             ));
-        } else {
-            // return redirect()->route('categories')->with('success', 'Categoria criada com sucesso');
+        } else { 
+            // retorno ajax json
             return json_encode(array(
                 'redirect' => route('categories'),
                 'success' => 'Categoria criada com sucesso'
