@@ -37,12 +37,12 @@
             <div class="div-header">
                 <div id="div-search" class="div-search">
                     <input type="text" id="searchbar" name="searchbar" placeholder="Procurar categoria..."/>
-                    <button id="button-search">Pesquisar</button>
+                    <button id="button-search" class="button search">Pesquisar</button>
                 </div>
 
                 <div id="div-newcategory" class="div-newcategory">
                     <a href="{{route('categories_create')}}">
-                        <button id="button-newcategory">Adicionar categoria</button>
+                        <button id="button-newcategory" class="button new-category">Adicionar categoria</button>
                     </a>
                 </div>
             </div>

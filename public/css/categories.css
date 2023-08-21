@@ -1,11 +1,11 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 .div-search {
     width: 100%;
-    height: 100px;
 }
 
 #searchbar {
@@ -14,9 +14,10 @@
     height: 30px;
 }
 
-#button-search {
-    width: 80px;
-    height: 30px;
+.button {
+    padding: 10px;
+    background-color: #C1DFD3;
+    border: 1px solid #C1DFD3;
 }
 
 td {
