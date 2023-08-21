@@ -13,6 +13,10 @@
 
     <body>
         <header>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit">Logout</button>
+            </form>
             <div class="top-section">
                 <h1>Olá <!-- Nome do usuário logado -->!</h1>
                 <!-- <a href="[página de configurações]">Configurações</a> -->

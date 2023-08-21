@@ -44,4 +44,10 @@ class AuthController extends Controller
             return redirect()->route('register')->with('error', 'Falha ao adicionar usuário. Contate o Administrador');
         }
     }
+
+    public function logout()
+    {
+        app('session')->flush();
+        return redirect('/login'); // Redirect the user to the login page or any other page you prefer.
+    }
 }
