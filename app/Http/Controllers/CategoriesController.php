@@ -20,21 +20,34 @@ class CategoriesController extends Controller
         return view('categories/categories_create', compact('columnNames'));
     }
 
-    public function save(Request $request){
-        dd($request);
-        // $validatedData = $request->validate([
-        //     'nome_categoria' => 'required|string|max:255',
-        // ]);
+    public function save(Request $request){  
+        $validatedData = $request->validate([
+            'nome_categoria' => 'required|string|max:255',
+        ]);
+        
+        try{
+            $categories = new Categories();
+            $categories->nome_categoria = $validatedData["nome_categoria"];
+            $categories->user_alt = session('username'); 
+            $saved = $categories->save();
+         }
+         catch(\Exception $e){
+            // do task when error
+            return json_encode($e->getMessage());   // insert query
+         }
 
-        // $categories = new Categories();
-        // $categories->nome_categoria = $validatedData['nome_categoria'];
-        // $categories->user_alt = session('username');
-        // $saved = $categories->save();
-
-        // if(!$saved){
-        //     return redirect()->route('categories')->with('error', 'Falha ao adicionar categoria. Contate o Administrador');
-        // } else {
-        //     return redirect()->route('categories')->with('success', 'Categoria criada com sucesso');
-        // }
+        if(!$saved){
+            // return redirect()->route('categories')->with('error', 'Falha ao adicionar categoria. Contate o Administrador');
+            return json_encode(array(
+                'redirect' => route('categories'),
+                'error' => 'Falha ao adicionar categoria. Contate um administrador'
+            ));
+        } else {
+            // return redirect()->route('categories')->with('success', 'Categoria criada com sucesso');
+            return json_encode(array(
+                'redirect' => route('categories'),
+                'success' => 'Categoria criada com sucesso'
+            ));
+        }
     }
 }

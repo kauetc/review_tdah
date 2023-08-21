@@ -1,2 +1,2 @@
 # review_tdah
-Site de reviews para restaurantes ja visitados para pessoas neurodivergentes.
+Site de reviews para experiências ja vividas para pessoas neurodivergentes.

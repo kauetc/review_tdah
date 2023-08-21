@@ -19,7 +19,6 @@ class Categories extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
         'nome_categoria',
         'created_at',
         'updated_at',
