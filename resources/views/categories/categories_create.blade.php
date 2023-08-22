@@ -4,14 +4,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Categorias</title>        
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/structure.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
+        <title>Categorias</title>        
     </head>
 
     <body>
-        <div id="page-header">
-            <h1>Categorias</h1>
-        </div>
+        @include('_header')
+        <h1>Categorias</h1>
+        
         <div id="content">            
             <form method="POST" action="{{route('categories_new')}}" enctype="multipart/formdata" id='form_categories'>
                 {{ csrf_field()}}
@@ -26,6 +27,7 @@
             const route = "{{route('categories_new')}}";
         </script>
         <script src="{{ asset('js/categories.js') }}"></script>
+        @include('_footer')
     </body>
     
 </html>

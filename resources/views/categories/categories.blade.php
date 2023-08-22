@@ -13,11 +13,8 @@
 
     <body>
         <div class="page-header">
-            <header>
-                <h1>Categorias</h1>
-                <a class="top-bar-settings" href="{{route('settings');}}">Configurações</a>
-                <!-- Hiperlink sair? (canto superior direito)-->
-            </header>
+            @include('_header')
+            <h1>Categorias</h1>
         </div>
         @if (session()->has('success'))
             <div class="alert alert-success">
@@ -103,6 +100,6 @@
 
             </footer>
         </div>
-
+        @include('./_footer')
     </body>
 </html>

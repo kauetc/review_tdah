@@ -6,9 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Reviews</title>
         <link rel="stylesheet" href="login.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/structure.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
     </head>
 
     <body>
-        <h1>Reviews</h1>
+        @include('_header')
+            <h1>Reviews</h1>
+        @include('_footer')
     </body>
 </html>
