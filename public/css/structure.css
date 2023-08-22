@@ -53,3 +53,11 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
+
+/* Logout button styling */
+form button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
