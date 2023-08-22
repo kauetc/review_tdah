@@ -107,6 +107,6 @@
 
             </footer>
         </div>
-
+        @include('./_footer')
     </body>
 </html>

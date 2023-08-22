@@ -22,18 +22,61 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    if(session('user_id') > 0){
+        return view('dashboard');
+    } else {
+        return view('login');
+    }
+});
+Route::middleware(['auth'])->group(function () {
+    // Protected routes go here
+    Route::get('/dashboard', function (Request $request) {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::post('/logout', function(Request $request){
+        return (new AuthController)->logout($request);
+    })->name('logout');
+
+    Route::get('/subcategories', function(Request $request){
+        return (new SubCategoriesController)->browse($request);
+    })->name('subcategories');
+    
+    Route::get('/categories/create', function(Request $request){
+        return (new CategoriesController)->create($request);
+    })->name('categories_create');
+    
+    Route::post('/categories/new', function(Request $request){
+        return (new CategoriesController)->save($request);
+    })->name('categories_new');
+    
+    Route::get('/categories', function(Request $request){
+        return (new CategoriesController)->browse($request);
+    })->name('categories');
+
+    Route::get('/categories/{id}', function(Request $request){
+        return (new CategoriesController)->browse($request);
+    })->name('categories_detail');
+    
+    Route::get('/reviews', function(Request $request){
+        return (new ReviewsController)->browse($request);
+    })->name('reviews');
+    
+    Route::get('/settings', function(Request $request){
+        return (new SettingsController)->browse($request);
+    })->name('settings');
+    
+    Route::get('/profile', function(Request $request){
+        return (new UserController)->profile($request);
+    })->name('profile');
 });
 
-
-Route::get('/dashboard', function (Request $request) {
-    // return (new Controller)->index($request);
-    return view('dashboard');
-})->name('dashboard');
-
 Route::get('/login', function (Request $request) {
-    // return (new Controller)->index($request);
-    return view('login');
+    if(session('user_id') > 0){
+        return view('dashboard');
+    } else {
+        return view('login');
+    }
 })->name('login');
 
 Route::post('/login/auth', function(Request $request){
@@ -48,35 +91,5 @@ Route::post('/register/create', function(Request $request){
     return (new AuthController)->register($request);
 })->name('create_user');
 
-Route::get('/subcategories', function(Request $request){
-    return (new SubCategoriesController)->browse($request);
-})->name('subcategories');
 
-Route::get('/categories/create', function(Request $request){
-    return (new CategoriesController)->create($request);
-})->name('categories_create');
 
-Route::post('/categories/new', function(Request $request){
-    return (new CategoriesController)->save($request);
-})->name('categories_new');
-
-Route::get('/categories', function(Request $request){
-    return (new CategoriesController)->browse($request);
-
-})->name('categories');
-
-Route::get('/categories/{id}', function(Request $request){
-    return (new CategoriesController)->browse($request);
-})->name('categories_detail');
-
-Route::get('/reviews', function(Request $request){
-    return (new ReviewsController)->browse($request);
-})->name('reviews');
-
-Route::get('/settings', function(Request $request){
-    return (new SettingsController)->browse($request);
-})->name('settings');
-
-Route::get('/profile', function(Request $request){
-    return (new UserController)->profile($request);
-})->name('profile');
