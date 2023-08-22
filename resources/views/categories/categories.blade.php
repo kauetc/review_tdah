@@ -4,7 +4,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Categorias</title>        
+        <title>Categorias</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/structure.css') }}"/>       
         <link rel="stylesheet" type="text/css" href="{{ asset('../../../css/categories.css') }}"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +14,16 @@
     </head>
 
     <body>
+        @include('_header')
         <div class="container">
-            <header>
-                <div class="header-elements">
-                    <h1>Categorias</h1>
-                    <a class="top-bar-settings" href="{{route('settings');}}">Configurações</a>
-                    <!-- Hiperlink sair? (canto superior direito)-->
-                    <!-- Menu lateral -->
-                </div>
-            </header>
+            
+            <div class="header-elements">
+                <h1>Categorias</h1>
+                
+                <!-- Hiperlink sair? (canto superior direito)-->
+                <!-- Menu lateral -->
+            </div>
+            
         
         @if (session()->has('success'))
             <div class="alert alert-success">
@@ -54,7 +57,7 @@
                     <table>
                         <thead>
                             <tr>
-                                <td id='category_name'>Nome da categoria</td>
+                                <td>Nome da categoria</td>
                                 <td>Created at</td>
                                 <td>Updated at</td>
                                 <td>Alteração por usuário</td>
@@ -63,10 +66,10 @@
                         <tbody>
                             @foreach($categories as $category)
                                 <tr>
-                                    <td>{{$category->nome_categoria}}</td>
-                                    <td>{{$category->created_at}}</td>
-                                    <td>{{$category->updated_at}}</td>
-                                    <td><a href=""><button id="button-edit-category">Editar</button></a>
+                                    <td class="table-left category-name">{{$category->nome_categoria}}</td>
+                                    <td class="table-center">{{$category->created_at}}</td>
+                                    <td  class="table-center">{{$category->updated_at}}</td>
+                                    <td class="table-right"><a href=""><button id="button-edit-category">Editar</button></a>
                                     <a href=""><button id="button-exclude-category">Excluir</button></a></td>
                                 </tr>
                             @endforeach
@@ -102,11 +105,7 @@
         </script>
         -->
 
-        <div class="page-footer">
-            <footer>
-
-            </footer>
-        </div>
+        
         @include('./_footer')
     </body>
 </html>
