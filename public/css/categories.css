@@ -4,72 +4,71 @@
     box-sizing: border-box;
     font-family: 'Montserrat', 'Urbanist', sans-serif;
 }
-
 body {
-    
+    background-image: url(../../public/Images/sujo-teste-padrao-do-bloco-sala-de-pintura\(G\).jpg);
+    background-position: center;
+    background-size: cover;
 }
-
+header {
+    background-color: #18160F;
+}
 .container {
     margin: auto;
     max-width: 1140px;
     width: auto;
-    height: 100vw;
-    background-color: #FDF9EB;
-    padding: 0px 40px;
+    height: 100vh;
+    background-color: #FEFCF5;
+    padding: 0px 40px;   
 }
-.header-elements {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.title-area {
+    margin: 25px 0 15px 0;
 }
-.header-elements h1 {
-    margin-top: 30px;
-    font-size: 40px;
-    padding-top: 20px;
+.title-area h1 {
+    font-size: 50px;
+    font-weight: bold;
     color: #312D1F;
     text-transform: uppercase;
+    text-shadow: 3px 1px 5px #a19364;    
 }
 .search-add-area {
-    display: flex;
-    
+    display: flex;   
 }
 .div-search {
     width: 100%;
     margin: 20px 0px;
 }
-
 #searchbar {
     width: 300px;
     height: 35px;
     outline: none;
     padding-left: 8px;
-    border: 1px solid #7A704E;
-    border-radius: 4px;
-   
+    border: 1px solid #625a3e71;
+    border-radius: 4px; 
 }
 #searchbar::placeholder {
     font-weight: 200;
 }
-
 .button {
     padding: 10px;
     background-color: #F2BE93;
-    border: 2px solid #F2BE93;
+    border: none;
     border-radius: 4px;
     margin-left: 5px;
     font-weight: bold;
+    box-shadow: 1px 1px 5px #8F6848;
 }
 .button:hover {
-    background-color: #625A3E;
-    border: 2px solid #625A3E;
+    background-color: #7A784E;
+    border: none;
     color: #FDF6F1;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #18160F;
 }
-
 .table {
     display: flex;
     justify-content: center;
+    max-width: 1100px;
 }
-
 .table thead td {
     width: 200px;
     padding: 10px;
@@ -84,22 +83,43 @@ body {
     background-color: #FAF0CD;
 }
 .table tbody tr:nth-child(odd) {
-    background-color: #FDF9EB;
+    background-color: #FCF6E1; /*#FDF9EB*/
 }
 .table .category-name {
-    width: 500px;
+    max-width: 500px;
+    word-wrap: break-word;  
 }
 .table tbody tr {
-    height: 35px;
+    height: 35px;   
+}
+.table tbody td {
+    padding: 0 15px;
 }
 .table tbody .table-left {
-    text-align: left;
+    text-align: left;  
 }
-.table tbody .table-center {
+.table tbody .table-center,
+.table tbody .table-right {
     text-align: center;
 }
-.table tbody .table-right {
-    display: flex;
-    justify-content: space-evenly;
-    
+.table tbody .table-center {
+    font-size: 12px;
+}
+#button-edit-category {
+    margin-right: 8px;
+    background-color: #F2BE93;
+}
+#button-exclude-category {
+    background-color: #7A784E;
+    color: #FDF6F1;
+}
+#button-edit-category,
+#button-exclude-category {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+footer {
+    background-color: #18160F;
 }

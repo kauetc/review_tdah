@@ -15,16 +15,12 @@
 
     <body>
         @include('_header')
-        <div class="container">
-            
-            <div class="header-elements">
+        <div class="container">        
+            <div class="title-area">
                 <h1>Categorias</h1>
-                
-                <!-- Hiperlink sair? (canto superior direito)-->
-                <!-- Menu lateral -->
+                <p>É hora de organizar seus itens!</p>
             </div>
-            
-        
+
         @if (session()->has('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -58,9 +54,9 @@
                         <thead>
                             <tr>
                                 <td>Nome da categoria</td>
-                                <td>Created at</td>
-                                <td>Updated at</td>
-                                <td>Alteração por usuário</td>
+                                <td>Criado em</td>
+                                <td>Atualizado em</td>
+                                <td>Configurar categoria</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,8 +65,10 @@
                                     <td class="table-left category-name">{{$category->nome_categoria}}</td>
                                     <td class="table-center">{{$category->created_at}}</td>
                                     <td  class="table-center">{{$category->updated_at}}</td>
-                                    <td class="table-right"><a href=""><button id="button-edit-category">Editar</button></a>
-                                    <a href=""><button id="button-exclude-category">Excluir</button></a></td>
+                                    <td class="table-right">
+                                        <a href=""><button id="button-edit-category">Editar</button></a>
+                                        <a href=""><button id="button-exclude-category">Excluir</button></a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
