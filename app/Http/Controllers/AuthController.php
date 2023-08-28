@@ -39,7 +39,7 @@ class AuthController extends Controller
         $addUser = User::add($request, $validatedData);
 
         if($addUser){
-            return redirect()->route('register')->with('success', 'Usuário registrado com sucesso');
+            return redirect()->route('login')->with('success', 'Usuário registrado com sucesso');
         } else {
             return redirect()->route('register')->with('error', 'Falha ao adicionar usuário. Contate o Administrador');
         }

@@ -11,10 +11,17 @@
     <title>Document</title>
 </head>
 <body> 
+
+    @if (session()->has('error'))
+        <div class="alert alert-success">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="container">
         <div class="register-background"></div>
         <div class="register-form">
-            <form action="{{route("create_user")}}" method="POST">
+            <form action="{{route("create_user")}}" method="POST" enctype="multipart/formdata" id='form_register'>
+                {{ csrf_field()}}
                 <h1>CADASTRO DE USUÁRIO</h1>
                 <div class="form-items">
                     <div class="form-items--personal-info">
