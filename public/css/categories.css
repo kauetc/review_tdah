@@ -134,6 +134,7 @@ header .header-menu li .active_1 {
     outline: none;
     padding-left: 8px;
     border: 1px solid #625a3e71;
+    box-shadow: 1px 1px 5px #2E2E2E;
     border-radius: 4px; 
 }
 #searchbar::placeholder {

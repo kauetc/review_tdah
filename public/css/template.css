@@ -118,20 +118,20 @@ form button {
 }
 .button {
     padding: 10px;
-    background-color: #F5E19C;
-    color: #FFFFFF;
+    background-color: #f5e19c;
+    color: #2E2E2E;
     border: none;
     border-radius: 4px;
     margin-left: 5px;
     font-weight: bold;
-    box-shadow: 1px 1px 5px #8F6848;
+    box-shadow: 1px 1px 5px #2E2E2E;
 }
 .button:hover {
     background-color: #E6626F;
     border: none;
     color: #FDF6F1;
     cursor: pointer;
-    box-shadow: 1px 1px 5px #18160F;
+    box-shadow: 1px 1px 5px #2E2E2E; /*#18160F*/
 }
 footer {
     height: 40px;
