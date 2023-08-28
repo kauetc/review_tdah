@@ -6,7 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as Authenticatable;
+use Illuminate\Database\QueryException;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Model implements Authenticatable
@@ -71,5 +73,44 @@ class User extends Model implements Authenticatable
     public function getRememberTokenName()
     {
         return 'remember_token';
+    }
+
+    public static function add($request, $validatedData)
+    {
+        try 
+        {
+            // Create a new User instance
+            $user = new self;
+
+            // Set the attributes from the validated data
+            $user->nome = $validatedData['nome'];
+            $user->username = $validatedData['username'];
+            $user->password = Hash::make($validatedData['password']);
+            $user->data_nasc = $validatedData['datanascimento'];
+            $user->cpf = $validatedData['cpf'];
+            $user->cep = $request->cep;
+            $user->rua = $request->logradouro;
+            $user->complemento = $request->complemento;
+            $user->numero = $request->numero;
+            $user->bairro = $request->bairro;
+            $user->cidade = $request->cidade;
+            $user->estado = $request->uf;
+            $user->pais = $request->pais;
+
+            // Save the user
+            $user->save();
+
+            return true;
+        } 
+        catch(QueryException $exception){
+            // Handle the duplicate key violation
+            // You can redirect back with an error message
+            // or handle it in a way that suits your application
+
+            // Example: Redirect back with an error message
+            return false;
+        }
+        
+        
     }
 }

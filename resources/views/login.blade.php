@@ -27,9 +27,6 @@
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
-            <div>
-                <p>Para logar clique <a href="{{route('login')}}">aqui</a></p>
-            </div>
         @endif
 
         <div class="center-square">
