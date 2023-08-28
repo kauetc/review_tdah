@@ -14,7 +14,7 @@
     <div class="container">
         <div class="register-background"></div>
         <div class="register-form">
-            <form method="POST">
+            <form action="{{route("create_user")}}" method="POST">
                 <h1>CADASTRO DE USUÁRIO</h1>
                 <div class="form-items">
                     <div class="form-items--personal-info">
@@ -106,5 +106,42 @@
         </div>
     </div>    
     @include('_footer')
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+			$("#cep").blur(function(){
+				var cep = this.value.replace(/[^0-9]/, "");
+				if(cep.length != 8){
+					return false;
+				}
+				var url = "https://viacep.com.br/ws/"+cep+"/json/";				
+				$.getJSON(url, function(resposta){
+					try{						
+						$("#logradouro").val(resposta.logradouro);
+                        $("#complemento").val(resposta.complemento);
+                        $("#bairro").val(resposta.bairro);
+                        $("#localidade").val(resposta.localidade);
+                        $("#uf").val(resposta.uf);
+                        $("#numero").focus();
+                        $("#pais").val("Brasil")
+					}catch(ex){}
+				});
+			});
+            $('document').ready(function(){
+                var url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome";				
+				$.getJSON(url, function(resposta){
+					try{					
+                        console.log('aoba');	
+						var options = '';
+                        $.each(resposta, function(index, value) {
+                            var isSelected = (value.sigla === "{{ old('uf') }}") ? 'selected' : '';
+                            options += '<option value="' + value.sigla + '" ' + isSelected + '>' + value.nome + '</option>';
+                        });
+                        $('#uf').html(options);
+					}catch(ex){}
+				});
+            });
+            
+
+		</script>
 </body>
 </html>
