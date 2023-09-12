@@ -63,7 +63,7 @@
                     <table id="table">
                         <thead>
                             <tr>
-                                <td>Nome da categoria</td>
+                                <td class="category-name">Nome da categoria</td>
                                 <td>Criado em</td>
                                 <td>Atualizado em</td>
                                 <td>Configurar categoria</td>

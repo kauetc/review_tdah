@@ -65,6 +65,7 @@ form button {
     margin: 30px auto;
     max-width: 1140px;
     width: auto;
+    min-height: calc(100vh - 100px);
     height: 100%;
     background-color: #FEFCF5; /*#FEFCF5*/
     padding: 30px 40px 50px;
