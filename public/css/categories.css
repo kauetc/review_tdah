@@ -67,7 +67,7 @@ header .header-menu .active_1 {
     max-width: 1100px;
 }
 .table thead td {
-    width: 200px;
+    width: 250px;
     padding: 10px;
     text-align: center;
     background-color: #A3CFBD;
@@ -83,7 +83,7 @@ header .header-menu .active_1 {
     background-color: #fefcf5; /*#FDF9EB*/
 }
 .table .category-name {
-    width: 500px;
+    min-width: 500px;
     max-width: 500px;
     word-wrap: break-word;  
 }
