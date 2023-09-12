@@ -49,7 +49,7 @@
                 <div id="expand-contract" class="expanded">
                     <table>
                         <tr><td><a href="{{route('categories');}}">Categorias</a></td></tr>
-                        <tr><td><a href="{{route('subcategories');}}">Subcategorias</a></td></tr>
+                        <tr><td><a href="{{route('establishment');}}">Estabelecimentos</a></td></tr>
                         <tr><td><a href="{{route('reviews');}}">Reviews</a></td></tr>
                         <tr><td>Análise dos dados</td></tr>
                         <tr><td><a href="{{route('settings');}}">Configurações</a></td></tr>

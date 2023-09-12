@@ -18,13 +18,13 @@
         <div class="header-menu">
             <nav>
                 <ul>
-                    <li><a href="/">Dashboard</a></li>
-                    <li><a href="{{route('categories');}}" class="active_1">Categorias</a></li>
-                    <li><a href="{{route('subcategories');}}" class="active_2">Subcategorias</a></li>
-                    <li><a href="{{route('reviews');}}" class="active_3">Reviews</a></li>
-                    <li><a href="#">Análise dos dados</a></li>
-                    <li><a href="{{route('profile');}}" class="active_4">Perfil</a></li>
-                    <li><a href="{{route('settings');}}" class="active_5">Configurações</a></li>
+                    <li id="dashboard"><a href="/">Dashboard</a></li>
+                    <li id="categories"><a href="{{route('categories');}}" >Categorias</a></li>
+                    <li id="establishment"><a href="{{route('establishment');}}">Estabelecimentos</a></li>
+                    <li id="reviews"><a href="{{route('reviews');}}">Reviews</a></li>
+                    <li id="data_analytics"><a href="#">Análise dos dados</a></li>
+                    <li id="profile"><a href="{{route('profile');}}">Perfil</a></li>
+                    <li id="settings"><a href="{{route('settings');}}">Configurações</a></li>
                 </ul>
             </nav>
             <div>
@@ -43,5 +43,19 @@
         <p>&copy; {{ date('Y') }} Your Website. All rights reserved.</p>
         @yield('footer')
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var url = window.location.href;
+            url = url.split('/')
+            url = url[url.length - 1];
+            console.log(url)
+            if(url === ''){
+                url= 'dashboard';
+            }
+            $('#'+url).addClass('active');
+        })
+    </script>
+    @yield('javascript')
 </body>
 </html>

@@ -163,3 +163,7 @@ footer {
     justify-content: center;
     width: 100%;
 }
+
+.active {
+    border-bottom: 4px solid #E6626F !important;
+}

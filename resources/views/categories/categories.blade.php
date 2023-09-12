@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Categorias</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
-        <!--<link rel="stylesheet" type="text/css" href="{{ asset('css/structure.css') }}"/>-->       
-        <link rel="stylesheet" type="text/css" href="{{ asset('../../../css/categories.css') }}"/>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600&family=Urbanist:wght@100;200;400;600&display=swap" rel="stylesheet">
-    </head>
-
-    <body>
-        @include('_header')
+@extends('layouts.master')
+@section('import')
+<link rel="stylesheet" type="text/css" href="{{ asset('../../../css/categories.css') }}"/>
+@endsection
+@section('content')
         <div class="container">
             <div class="side-detail--border"></div>                
             <div class="title-page--area">
@@ -94,46 +81,30 @@
                        
             </section>
         </div>
-
-        <!-- É isso mesmo?
-        <button onclick="adicionarDiv()">Adicionar Div</button> 
-        <script>
-            function adicionarDiv() {
-            var novaDiv = document.createElement("div");
-            novaDiv.className = "column";
-            novaDiv.innerHTML = "Nova Div";
-
-            var colunas = document.querySelector(".row");
-            colunas.appendChild(novaDiv);
-            }
-        </script>
-        -->
-      
-        @include('./_footer')
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $("#searchbar").on("keyup", function() {
-                    var input, filter, table, tr, td, i, txtValue;
-                    input = $(this).val().toUpperCase();
-                    table = $("#table");
-                    tr = table.find("tr");
-                    tr.each(function(index,val) {
-                        if (index === 0) {
-                            return true;
+@endsection
+@section('javascript')
+    <script>
+        $(document).ready(function() {
+            $("#searchbar").on("keyup", function() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = $(this).val().toUpperCase();
+                table = $("#table");
+                tr = table.find("tr");
+                tr.each(function(index,val) {
+                    if (index === 0) {
+                        return true;
+                    }
+                    td = $(this).find("td").eq(0);
+                    if (td.length) {
+                        txtValue = td.text();
+                        if (txtValue.toUpperCase().indexOf(input) > -1) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
                         }
-                        td = $(this).find("td").eq(0);
-                        if (td.length) {
-                            txtValue = td.text();
-                            if (txtValue.toUpperCase().indexOf(input) > -1) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        }
-                    });
+                    }
                 });
             });
-        </script>
-    </body>
-</html>
+        });
+    </script>
+@endsection

@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/structure.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}"/>
-        <title>Categorias</title>        
-    </head>
-
-    <body>
-        @include('_header')
+@extends('layouts.master')
+@section('content')
         <h1>Categorias</h1>
         
         <div id="content">            
@@ -20,15 +9,11 @@
                 <input type="button" id="button_confirm" class="button" value="Salvar">
             </form>
         </div>
-
+@endsection
+@section('javascript')
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
-
             const route = "{{route('categories_new')}}";
         </script>
         <script src="{{ asset('js/categories.js') }}"></script>
-        @include('_footer')
-    </body>
-    
-</html>
-
+@endsection
