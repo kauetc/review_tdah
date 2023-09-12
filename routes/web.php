@@ -3,9 +3,9 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\EstablishmentsController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,9 +38,9 @@ Route::middleware(['auth'])->group(function () {
         return (new AuthController)->logout($request);
     })->name('logout');
 
-    Route::get('/subcategories', function(Request $request){
-        return (new SubCategoriesController)->browse($request);
-    })->name('subcategories');
+    Route::get('/establishment', function(Request $request){
+        return (new EstablishmentsController)->browse($request);
+    })->name('establishment');
     
     Route::get('/categories/create', function(Request $request){
         return (new CategoriesController)->create($request);
