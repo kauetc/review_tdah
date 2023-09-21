@@ -59,7 +59,7 @@
                         <tbody>
                             @foreach($categories as $category)
                                 <tr>
-                                    <td class="table-left category-name">{{$category->nome_categoria}}</td>
+                                    <td id="td_1" class="table-left category-name"><span id="span_td">{{$category->nome_categoria}}</span><input type="text" id="input_hidden" hidden></td>
                                     <td class="table-center">{{$category->created_at}}</td>
                                     <td  class="table-center">{{$category->updated_at}}</td>
                                     <td class="table-right">
@@ -104,6 +104,15 @@
                         }
                     }
                 });
+            });
+
+            $('#button-edit').on('click', function(e){
+                e.preventDefault();
+                Swal.fire(
+                    'Good job!',
+                    'You clicked the button!',
+                    'success'
+                )
             });
         });
     </script>
