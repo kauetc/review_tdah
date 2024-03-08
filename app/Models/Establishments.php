@@ -11,7 +11,7 @@ class Establishments extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'categorias';
+    protected $table = 'estabelecimentos';
 
      /**
      * The attributes that are mass assignable.

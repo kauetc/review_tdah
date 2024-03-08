@@ -36,6 +36,15 @@ header .header-menu .active_1 {
     margin-bottom: 30px;
     border-radius: 15px;
 }
+
+.login-section {
+    display: flex;   
+    text-align: left;
+    height: 120px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    margin-left: 40px;
+}
 .search-area {
     display: flex;
     flex-direction: column;

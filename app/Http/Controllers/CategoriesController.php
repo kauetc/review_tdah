@@ -20,7 +20,7 @@ class CategoriesController extends Controller
         return view('categories/categories_create', compact('columnNames'));
     }
 
-    public function save(Request $request){  
+    public function store(Request $request){  
         $validatedData = $request->validate([
             'nome_categoria' => 'required|string|max:255',
         ]);

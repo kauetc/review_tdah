@@ -1,5 +1,9 @@
 /* Reset some default styles */
-body, h1, h2, h3, p {
+body,
+h1,
+h2,
+h3,
+p {
     margin: 0;
     padding: 0;
 }
@@ -37,9 +41,12 @@ header {
     background-color: #333;
     color: white;
     padding: 10px;
-    display: flex; /* Use flexbox to align elements side by side */
-    justify-content: space-between; /* Space elements evenly */
-    align-items: center; /* Center elements vertically */
+    display: flex;
+    /* Use flexbox to align elements side by side */
+    justify-content: space-between;
+    /* Space elements evenly */
+    align-items: center;
+    /* Center elements vertically */
 }
 
 /* Navigation links styling */
@@ -60,4 +67,15 @@ form button {
     border: none;
     color: white;
     cursor: pointer;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
 }

@@ -15,8 +15,8 @@
                 </div>
             </div>
             <div id="div-newcategory" class="div-newcategory">
-                <a href="{{route('categories_create')}}">
-                    <button id="button-newcategory" class="button new-category">Adicionar categoria</button>
+                <a href="{{route('establishment_create')}}">
+                    <button id="button-newcategory" class="button new-category">Adicionar Estabelecimento</button>
                 </a>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 {{ session('success') }}
             </div>
             <div>
-                <p>Categoria Adicionada com sucesso</p>
+                <p>Estabelecimento adicionad com sucesso</p>
             </div>
         @endif
         @if (session()->has('error'))
@@ -48,8 +48,8 @@
                 <table id="table">
                     <thead>
                         <tr>
-                            <td>Nome da categoria</td>
-                            <td>Configurar categoria</td>
+                            <td>Nome do Estabelecimento</td>
+                            <td>Configurações</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +57,7 @@
                             <tr>
                                 <td class="table-left category-name">{{$category->nome_categoria}}</td>
                                 <td class="table-right">
+                                    <a href=""><button id="button-edit">Reviews</button></a>
                                     <a href=""><button id="button-edit">Editar</button></a>
                                     <a href=""><button id="button-exclude">Excluir</button></a>
                                 </td>

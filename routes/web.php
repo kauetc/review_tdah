@@ -41,13 +41,21 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/establishment', function(Request $request){
         return (new EstablishmentsController)->browse($request);
     })->name('establishment');
+
+    Route::get('/establishment/create', function(Request $request){
+        return (new EstablishmentsController)->create($request);
+    })->name('establishment_create');
+
+    Route::post('/establishment/new', function(Request $request){
+        return (new EstablishmentsController)->store($request);
+    })->name('establishment_new');
     
     Route::get('/categories/create', function(Request $request){
         return (new CategoriesController)->create($request);
     })->name('categories_create');
     
     Route::post('/categories/new', function(Request $request){
-        return (new CategoriesController)->save($request);
+        return (new CategoriesController)->store($request);
     })->name('categories_new');
     
     Route::get('/categories', function(Request $request){
